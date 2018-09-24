@@ -9,8 +9,12 @@ class Pets:
     def __str__(self):
         return "{}\n" \
                "{}\n" \
-               "{}\n" \
-               "and they are mammals, of course".format(self.dog1, self.dog2, self.dog3)
+               "{}".format(self.dog1, self.dog2, self.dog3)
+
+    def check_mammals(self):
+        if all([dog.mammal for dog in self.pets_list]):
+            return "and they are mammals, of course"
+        return "Not all are mammals"
 
     def check_all(self):
         if all([dog.is_hungry for dog in self.pets_list]):
@@ -34,6 +38,7 @@ class Dog:
     def __init__(self, name, age):
         self.name = name
         self.age = age
+        self.mammal = True
         self.is_hungry = True
         Dog.number_of_dogs += 1
 
@@ -50,14 +55,3 @@ class Dog:
     def walk(self):
         return "{} is walking!".format(self.name)
 
-
-dog1 = Dog('Tom', 6)
-dog2 = Dog('Fletcher', 7)
-dog3 = Dog('Larry', 9)
-pets = Pets(dog1, dog2, dog3)
-
-print(Dog.number())
-print(pets)
-print(pets.check_all())
-print(pets.feed_all())
-print(pets.check_all())
