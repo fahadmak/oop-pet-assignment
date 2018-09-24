@@ -13,7 +13,7 @@ class Pets:
                "and they are mammals, of course".format(self.dog1, self.dog2, self.dog3)
 
     def check_all(self):
-        if all([self.dog1.is_hungry, self.dog2.is_hungry, self.dog3.is_hungry]):
+        if all([dog.is_hungry for dog in self.pets_list]):
             return "My dogs are hungry."
         return "My dogs are not hungry"
 

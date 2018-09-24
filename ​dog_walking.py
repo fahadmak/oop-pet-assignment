@@ -13,7 +13,7 @@ class Pets:
                "and they are mammals, of course".format(self.dog1, self.dog2, self.dog3)
 
     def check_all(self):
-        if all([self.dog1.is_hungry, self.dog2.is_hungry, self.dog3.is_hungry]):
+        if all([dog.is_hungry for dog in self.pets_list]):
             return "My dogs are hungry."
         return "My dogs are not hungry"
 
@@ -38,7 +38,7 @@ class Dog:
         Dog.number_of_dogs += 1
 
     def __str__(self):
-        return "{} is {}".format(self.name, self.age)
+        return "{} is {}.".format(self.name, self.age)
 
     @classmethod
     def number(cls):
@@ -51,4 +51,13 @@ class Dog:
         return "{} is walking!".format(self.name)
 
 
+dog1 = Dog('Tom', 6)
+dog2 = Dog('Fletcher', 7)
+dog3 = Dog('Larry', 9)
+pets = Pets(dog1, dog2, dog3)
 
+print(Dog.number())
+print(pets)
+print(pets.check_all())
+print(pets.feed_all())
+print(pets.check_all())
