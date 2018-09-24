@@ -26,7 +26,7 @@ class Dog:
         return "{} is {}".format(self.name, self.age)
 
     @classmethod
-    def number_of_dogs(cls):
+    def number(cls):
         return "I have {} dogs".format(Dog.number_of_dogs)
 
     def eat(self):
