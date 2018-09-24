@@ -12,6 +12,11 @@ class Pets:
                "{}\n" \
                "and they are mammals, of course".format(self.dog1, self.dog2, self.dog3)
 
+    def check_all(self):
+        if all([self.dog1.is_hungry, self.dog2.is_hungry, self.dog3.is_hungry]):
+            return "My dogs are hungry."
+        return "My dogs are not hungry"
+
 
 class Dog:
     number_of_dogs = 0
