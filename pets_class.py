@@ -24,3 +24,11 @@ class Dog:
 
     def __str__(self):
         return "{} is {}".format(self.name, self.age)
+
+    @classmethod
+    def number_of_dogs(cls):
+        return "I have {} dogs".format(Dog.number_of_dogs)
+
+    def eat(self):
+        self.is_hungry = False
+
