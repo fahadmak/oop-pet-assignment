@@ -17,6 +17,12 @@ class Pets:
             return "My dogs are hungry."
         return "My dogs are not hungry"
 
+    def feed_all(self):
+        for dog in self.pets_list:
+            if dog.is_hungry is True:
+                dog.eat()
+        return "My dogs are not hungry"
+
 
 class Dog:
     number_of_dogs = 0
