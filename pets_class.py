@@ -11,3 +11,16 @@ class Pets:
                "{}\n" \
                "{}\n" \
                "and they are mammals, of course".format(self.dog1, self.dog2, self.dog3)
+
+
+class Dog:
+    number_of_dogs = 0
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        self.is_hungry = True
+        Dog.number_of_dogs += 1
+
+    def __str__(self):
+        return "{} is {}".format(self.name, self.age)
